@@ -1,9 +1,10 @@
 const express = require('express');
 const AWS = require('aws-sdk');
+require('dotenv').config()
 const app = express();
 
-const AWS_ACCESS_KEY_ID = '';
-const AWS_SECRET_ACCESS_KEY = '';
+const AWS_ACCESS_KEY_ID = process.env.ACCESS_KEY_ID;
+const AWS_SECRET_ACCESS_KEY = process.env.SECRET_ACCESS_KEY_ID;
 
 AWS.config.update({
   region: 'us-east-2',

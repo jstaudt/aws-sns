@@ -11,10 +11,6 @@ module.exports = (AWS, arn, message) => {
         TopicArn: arn
     };
 
-    try {
-        // return promisified response from SNS service
-        return new AWS.SNS().publish(params).promise();
-    } catch (e) {
-        console.log(e);
-    }
+    // return promisified response from SNS service
+    return new AWS.SNS().publish(params).promise();
 };

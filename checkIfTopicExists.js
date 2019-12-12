@@ -4,7 +4,7 @@ module.exports = (AWS, topicName) => {
 
         listTopics
             .then(data => {
-                resolve(data.Topics[0].TopicArn.includes(topicName));
+                resolve(data.Topics[0] && data.Topics[0].TopicArn.includes(topicName));
             })
             .catch(err => {
                 reject(err)
